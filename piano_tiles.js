@@ -2,8 +2,11 @@
 const WIDTH = 100;
 const HEIGHT = 150;
 
+//keyboard tile check if clicked
+const Y = 30;
+
 //winning score
-let WINNING_SCORE = 50;
+let winning_score = 50;
 
 //timer
 let time;
@@ -35,9 +38,6 @@ let NoteG;
 let NoteEb;
 let sounds;
 let play_note;
-
-//constant variables
-const a = 3;
 
 //load in the sounds
 function preload() {
@@ -141,8 +141,8 @@ function drawEnd(won) {
     //continue onto next level
     if (second() == 0) {
       level++;
-      old_win_score = WINNING_SCORE;
-      WINNING_SCORE = (old_win_score + 50) * level;
+      old_win_score = winning_score;
+      winning_score = (old_win_score + 50) * level;
       playing = true;
     }
   }
@@ -194,7 +194,7 @@ function drawEnd(won) {
 
     //re-start the game
     if (second() == 0) {
-      WINNING_SCORE = 50;
+      winning_score = 50;
       score = 0;
       level = 1;
       playing = true;
@@ -211,10 +211,49 @@ function newRow() {
   }
 }
 
-/* function keyPressed(){
+function keyPressed() {
+  let tile;
 
+  // 49 is the key code for the "1" key
+  if (keyCode === 49) {
+    tile = getClickedTile(26, Y);
+  }
+
+  // 50 is the key code for the "2" key
+  if (keyCode === 50) {
+    tile = getClickedTile(138, Y);
+  }
+
+  // 51 is the key code for the "3" key
+  if (keyCode === 51) {
+    tile = getClickedTile(244, Y);
+  }
+
+  // 52 is the key code for the "4" key
+  if (keyCode === 52) {
+    tile = getClickedTile(342, Y);
+  }
+  if (tile == -1) {
+    return;
+  }
+  if (tiles[tile] != 0) {
+    tiles[tile] = -1;
+    won = false;
+    playing = false;
+    noteEb.play();
+  } else {
+    play_note = random(sounds);
+    play_note.play();
+    score++;
+    newRow();
+
+    if (score >= winning_score) {
+      won = true;
+      //highscore();
+      playing = false;
+    }
+  }
 }
-*/
 
 function mousePressed() {
   if (!playing) {
@@ -236,47 +275,12 @@ function mousePressed() {
       score++;
       newRow();
 
-      if (score >= WINNING_SCORE) {
+      if (score >= winning_score) {
         won = true;
         //highscore();
         playing = false;
       }
     }
-  }
-}
-
-function handleState() {
-  if (!playing) {
-    // if we are not playing
-
-    if (time > 0) {
-      // if we are not in the countdown
-      /* endGame */
-
-      drawEnd(won);
-    } else {
-      // pre-game
-
-      /* draw countdown */
-      textSize(60);
-      fill("#FF0000");
-      text(-time, width / 2, height / 2);
-
-      /* count down countdown */
-      if (frameCount % 60 === 0) {
-        time++;
-        if (time === 0) {
-          playing = true;
-        }
-      }
-    }
-  } else {
-    //still playing
-    //time
-    textSize(90);
-    fill(255, 0, 0);
-    text(getTime(), width / 2, HEIGHT);
-    time++;
   }
 }
 

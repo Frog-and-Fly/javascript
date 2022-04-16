@@ -26,25 +26,40 @@ The colour blue is used in the background to represent the sky. The colour black
 
 The following pseudocode shows how the ball bounces off of the paddle:
       IF ball_x > paddle_x - 60 AND ball_x < paddle_x + 60 THEN
+      
          IF ball_y > paddle_y - 30 AND ball_y < paddle_y + 30 THEN
+         
             score = score + 1
+            
             set_speed = set_speed + 0.5
+            
             ball_speed_x = random set_speed
+            
             ball_speed_y = random set_speed
+            
             ball_speed_y = ball_speed_y * -1
+            
             IF score > 0 THEN
+            
                paddle_speed = paddle_speed + 0.5
+               
             END IF
+            
          END IF
+         
       END IF
 
 The following pseudocode shows how the paddle moves:
       IF left_arrow key is down THEN
+      
          paddle_x = paddle_x - paddle_speed
+         
       END IF
 
       IF right_arrow key is down THEN
+      
          paddle_x = paddle_x + paddle_speed
+         
       END IF
 
 ### Issues during the project and how I resolved them

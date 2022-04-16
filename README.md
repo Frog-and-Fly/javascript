@@ -51,6 +51,7 @@ The following pseudocode shows how the ball bounces off of the paddle:
       END IF
 
 The following pseudocode shows how the paddle moves:
+
       IF left_arrow key is down THEN
       
          paddle_x = paddle_x - paddle_speed

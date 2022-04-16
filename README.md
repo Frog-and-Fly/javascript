@@ -25,27 +25,27 @@ There is a ball, which is displayed as a circle, which, at the start of each rou
 The colour blue is used in the background to represent the sky. The colour black is used for the text because it stands out from the colour of the background. The ball is white to resemble a table tennis ball and the paddle is white to keep the number of colours to a minimum. I only used three colours in this project because I wanted to keep the graphics of this game simple to fit with my aim for the project.
 
 The following pseudocode shows how the ball bounces off of the paddle:
-IF ball_x > paddle_x - 60 AND ball_x < paddle_x + 60 THEN
-   IF ball_y > paddle_y - 30 AND ball_y < paddle_y + 30 THEN
-      score = score + 1
-      set_speed = set_speed + 0.5
-      ball_speed_x = random set_speed
-      ball_speed_y = random set_speed
-      ball_speed_y = ball_speed_y * -1
-      IF score > 0 THEN
-         paddle_speed = paddle_speed + 0.5
+      IF ball_x > paddle_x - 60 AND ball_x < paddle_x + 60 THEN
+         IF ball_y > paddle_y - 30 AND ball_y < paddle_y + 30 THEN
+            score = score + 1
+            set_speed = set_speed + 0.5
+            ball_speed_x = random set_speed
+            ball_speed_y = random set_speed
+            ball_speed_y = ball_speed_y * -1
+            IF score > 0 THEN
+               paddle_speed = paddle_speed + 0.5
+            END IF
+         END IF
       END IF
-   END IF
-END IF
 
 The following pseudocode shows how the paddle moves:
-IF left_arrow key is down THEN
-   paddle_x = paddle_x - paddle_speed
-END IF
+      IF left_arrow key is down THEN
+         paddle_x = paddle_x - paddle_speed
+      END IF
 
-IF right_arrow key is down THEN
-   paddle_x = paddle_x + paddle_speed
-END IF
+      IF right_arrow key is down THEN
+         paddle_x = paddle_x + paddle_speed
+      END IF
 
 ### Issues during the project and how I resolved them
 Whilst I was coding this project, I encountered an issue where the ball would go through parts of the paddle. Moreover, the ball would occasionally become stuck inside of the paddle due to it continuously bouncing off of either side of the paddle. I resolved this issue by changing the maths that controlled the ball bouncing off of the paddle so that it would bounce off of the whole paddle instead of just the centre.

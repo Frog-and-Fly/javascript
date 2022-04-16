@@ -15,6 +15,8 @@ In this game, the player has to use the left and right arrow keys on the keyboar
 ### Project Goals/Requirements
 I chose to use Javascript to code this program because it is much quicker than Python to process instructions and it is good for creating simple graphics, which I feel fits the overall aim of this project.
 
+To start the game, the user must firstly click on the screen.
+
 This project required three functions, the setup function, the draw function and the logic function. The variables are “let” at the top, outside of all of the functions. The setup function defines all of the variables, the draw function creates the graphics and the logic function controls how the player interacts with the computer, how the paddle moves and how the ball bounces off of the paddle.
 
 ### Design

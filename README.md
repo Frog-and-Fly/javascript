@@ -25,6 +25,7 @@ There is a ball, which is displayed as a circle, which, at the start of each rou
 The colour blue is used in the background to represent the sky. The colour black is used for the text because it stands out from the colour of the background. The ball is white to resemble a table tennis ball and the paddle is white to keep the number of colours to a minimum. I only used three colours in this project because I wanted to keep the graphics of this game simple to fit with my aim for the project.
 
 The following pseudocode shows how the ball bounces off of the paddle:
+
       IF ball_x > paddle_x - 60 AND ball_x < paddle_x + 60 THEN
       
          IF ball_y > paddle_y - 30 AND ball_y < paddle_y + 30 THEN

@@ -114,15 +114,15 @@ For the tiles, I chose the colours white and black to resemble the white and bla
 
 Below is an extract of pseudocode showing what happens when the ‘1’ key on the keyboard is pressed:
 
-            FUNCTION keyPressed:
-            
-              IF key == 1 THEN
-              
-                tile = getClickedTile(26, y (a coordinate where tile one is))
-                
-              END IF 
-              
-            END FUNCTION
+      FUNCTION keyPressed:
+
+        IF key == 1 THEN
+
+          tile = getClickedTile(26, y (a coordinate where tile one is))
+
+        END IF 
+
+      END FUNCTION
 
 ### Issues during the project and how I resolved them
 Firstly, there was an issue which I had whilst creating this project was that levels would not work. Whenever the correct amount of points to progress to the next level were collected, the winning end screen would not show. I discovered that issue was caused by the variable “winning_score” being assigned twice, each time with a different value. I solved this by deleting the variable which was having the wrong value assigned to it.

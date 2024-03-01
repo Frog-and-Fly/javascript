@@ -86,6 +86,7 @@ I think that this project went well because it fulfilled my expectations and has
 If I were to do this project again, I would put instructions for how to play on an instruction screen inside the game so that I would not have to explain how to play. Therefore, anyone would be able to play the game.
 
 ## Piano Tiles
+(completed 2022)
 
 ### Introduction
 I made the first version of this game whilst I was doing a computing course. However, since then, I have added new features such as levels, sound effects, an option to use the keyboard instead of the mouse and a high score.
